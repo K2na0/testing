@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #111, #1c1c1c);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: #fff;
+      overflow-x: hidden;
+      padding: 40px 10px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+      background: rgba(20, 20, 20, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 0, 150, 0.3), 0 0 50px rgba(0, 255, 255, 0.15);
+      animation: fadeInContainer 1.5s ease-out;
+      perspective: 1000px;
+      transition: transform 0.5s ease;
+    }
+
+    .container:hover {
+      transform: rotateX(3deg) rotateY(-3deg);
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #ff00cc;
+      box-shadow: 0 0 15px rgba(255, 0, 150, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .profile img:hover {
+      transform: scale(1.05);
+    }
+
+    .intro {
+      flex: 1;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #ff00cc, #3333ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: slideInTop 1s ease-in-out;
+    }
+
+    .typing {
+      font-size: 1.2rem;
+      color: #0ff;
+      margin-top: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #0ff;
+      width: 0;
+      animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    h2 {
+      color: #00ffff;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ff00cc;
+      display: inline-block;
+      animation: slideInLeft 1.2s ease-in-out;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      animation: fadeInText 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    p:nth-of-type(1) { animation-delay: 0.3s; }
+    p:nth-of-type(2) { animation-delay: 0.6s; }
+    p:nth-of-type(3) { animation-delay: 0.9s; }
+    p:nth-of-type(4) { animation-delay: 1.2s; }
+
+    .highlight {
+      color: #ff00cc;
+      font-weight: bold;
+    }
+
+    .socials {
+      margin-top: 20px;
+      animation: slideInBottom 1.5s ease-out;
+    }
+
+    .socials a {
+      color: #00ffff;
+      text-decoration: none;
+      margin-right: 15px;
+      font-size: 1.1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .socials a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ff00cc;
+      transition: width 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #ff00cc;
+    }
+
+    .socials a:hover::after {
+      width: 100%;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeInContainer {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInTop {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInBottom {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @media screen and (max-width: 600px) {
+      .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .intro h1 {
+        font-size: 2rem;
+      }
+
+      .typing {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="2cd938c6624c7a28cf1b65d4d4b94640.jpg" alt="Profile Picture">
+      <div class="intro">
+        <h1>Hey here is Ta </h1>
+        <div class="typing">I’m a Web Developer & UI Designer</div>
+      </div>
+    </div>
+
+    <h2>🌟 About Me</h2>
+    <p>I can use multie of languages to program <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and <span class="highlight">JavaScript</span>.</p>
+    <p>I would like to give creative ideas problem-solving and using tech to bring cool ideas to life.</p>
+
+    <h2>🚀 Skills</h2>
+    <p>Languages & Tools: HTML, CSS, JS, python</p>
+    <p>Design: Figma, Photoshop, Adobe XD</p>
+
+    <h2>📫 Contact Me</h2>
+    <div class="socials">
+      <a href="https://github.com/k2na0" target="_blank">GitHub</a>
+      <a href="k2na10a@gmail.com">Email Me</a>
+    </div>
+  </div>
+</body>
+</html>
